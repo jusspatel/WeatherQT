@@ -269,7 +269,7 @@ class Ui_MainWindow(object):
         import geocoder
         g = geocoder.ip('me')
         city = g.city
-        API = "http://api.openweathermap.org/data/2.5/weather?appid=YOURAPIKEY&q={}".format(city)
+        API = "http://api.openweathermap.org/data/2.5/weather?appid=YOURAPIKEYHERE&q={}".format(city)
         response = requests.get(API)
         x = response.json()
         self.label_4.setText(x["name"])
@@ -291,7 +291,7 @@ class Ui_MainWindow(object):
         self.label_15.setText(degToCompass(x["wind"]["deg"]))
         FeelsLike = int(x["main"]["feels_like"]) - 273
         self.label_13.setText(str(FeelsLike))
-        aqi = "https://api.waqi.info/feed/"+city+"/?token=YOUR API KEY"
+        aqi = "https://api.waqi.info/feed/"+city+"/?token=YOURAPIKEYHERE"
         response1 = requests.get(aqi)
         y = response1.json()
         self.label_17.setText(str(y["data"]["aqi"]))
@@ -316,7 +316,7 @@ class Ui_MainWindow(object):
     def getInput(self):
         
         city = self.lineEdit.text()
-        API = "http://api.openweathermap.org/data/2.5/weather?appid=YOURAPIKEY&q={}".format(city)
+        API = "http://api.openweathermap.org/data/2.5/weather?appid=YOURAPIKEYHERE&q={}".format(city)
         response = requests.get(API)
         x = response.json()
         self.label_4.setText(x["name"])
@@ -338,7 +338,7 @@ class Ui_MainWindow(object):
         self.label_15.setText(degToCompass(x["wind"]["deg"]))
         FeelsLike = int(x["main"]["feels_like"]) - 273
         self.label_13.setText(str(FeelsLike))
-        aqi = "https://api.waqi.info/feed/"+city+"/?token=YOUR API KEY"
+        aqi = "https://api.waqi.info/feed/"+city+"/?token=YOURAPIKEYHERE"
         response1 = requests.get(aqi)
         y = response1.json()
         self.label_17.setText(str(y["data"]["aqi"]))
